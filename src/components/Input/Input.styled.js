@@ -5,13 +5,22 @@ const StyledInput = styled.input`
     height: 60px;
     border: none;
     outline: none;
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.blue};
     font-size: ${({ theme }) => theme.fontSize.xlarge};
     border-radius: ${({ theme }) => theme.borderRadius.medium};
-    margin-top: 60px;
     padding: ${({ theme }) => theme.innerPadding.medium};
+    box-shadow: ${({ theme }) => theme.boxShadow.inner};
+    padding-left: 30px;
     &:focus {
-        border: 0;
+        border: 1px solid;
+        border-color: ${({ theme }) => theme.color.green};
         outline: 0;
+    }
+    &::placeholder {
+        font-size: ${({ theme }) => theme.fontSize.medium};
+        color: ${({ theme }) => theme.color.green};
+        opacity: 0.7;
     }
 `;
 export default StyledInput;

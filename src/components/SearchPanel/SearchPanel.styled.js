@@ -7,14 +7,12 @@ const StyledSearchPanel = styled.section`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: ${({ theme }) => {
-        console.log(theme.boxShadow.outer);
-        return theme.boxShadow.outer;
-    }};
+    padding: ${({ theme }) => theme.innerPadding.large};
+    box-shadow: ${({ theme }) => theme.boxShadow.outer};
     border-radius: ${({ theme }) => theme.borderRadius.small};
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export default StyledSearchPanel;
