@@ -23,7 +23,8 @@ https://data.brreg.no/enhetsregisteret/api/enheter/112233445
 - install and configute Webpack
 - add nice font
 - add Neumorphism Design
-
+- Prop Types
+- style
 
 ## Colors: 
 
