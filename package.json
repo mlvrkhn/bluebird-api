@@ -11,8 +11,8 @@
         "react-scripts": "4.0.3"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build"
+        "start": "webpack serve --mode development --open",
+        "build": "webpack --mode production"
     },
     "eslintConfig": {
         "extends": [
@@ -31,5 +31,16 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@babel/core": "^7.13.1",
+        "@babel/plugin-proposal-class-properties": "^7.13.0",
+        "@babel/preset-env": "^7.13.5",
+        "@babel/preset-react": "^7.12.13",
+        "babel-loader": "^8.2.2",
+        "html-webpack-plugin": "^5.2.0",
+        "webpack": "^5.24.2",
+        "webpack-cli": "^4.5.0",
+        "webpack-dev-server": "^3.11.2"
     }
 }
