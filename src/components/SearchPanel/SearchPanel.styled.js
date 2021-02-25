@@ -4,13 +4,16 @@ const StyledSearchPanel = styled.section`
     position: absolute;
     width: 900px;
     height: 600px;
-    border: 1px solid hotpink;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    boxshadow: ${({ theme }) => {
-        console.log(theme);
+    box-shadow: ${({ theme }) => {
+        console.log(theme.boxShadow.outer);
+        return theme.boxShadow.outer;
     }};
+    border-radius: ${({ theme }) => theme.borderRadius.small};
+    display: flex;
+    justify-content: center;
 `;
 
 export default StyledSearchPanel;
