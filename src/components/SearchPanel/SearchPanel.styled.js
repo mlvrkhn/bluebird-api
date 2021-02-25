@@ -13,6 +13,7 @@ const StyledSearchPanel = styled.section`
     }};
     border-radius: ${({ theme }) => theme.borderRadius.small};
     display: flex;
+    flex-direction: row;
     justify-content: center;
 `;
 

@@ -6,7 +6,11 @@ const SearchPanel = () => {
     return (
         <StyledSearchPanel>
             <Input />
-            <img src="../../../src/assets/logo.png"
+            <img
+                style={{ height: '60px', marginTop: '60px' }}
+                src='../../../src/assets/logo.png'
+                alt='tipio-logo'
+            />
         </StyledSearchPanel>
     );
 };
