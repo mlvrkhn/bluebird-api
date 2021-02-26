@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledTableRow = styled.tr`
-    fontsize: 10px;
+    font-size: ${({ theme }) => theme.fontSize.medium};
 `;
 
 export default StyledTableRow;

@@ -6,10 +6,10 @@ const theme = {
         gray: '#5C6265',
     },
     fontSize: {
-        small: '0.8rem',
+        small: '0.7rem',
         medium: '1rem',
-        large: '1.2rem',
-        xlarge: '1.5rem',
+        large: '1.3rem',
+        xlarge: '1.6rem',
     },
     innerPadding: {
         small: '0.5rem',

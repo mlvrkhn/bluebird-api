@@ -22,8 +22,9 @@
 
 ## Project features:
 - upload and use external fonts via file-loader,
+- type checking with PropTypes,
 - neumophic design,
-- Redux state management,
+- Redux state management with Thunk middleware,
 - used Hooks: useState, useEffect, useDispatch, useSelector, custom,
 
 ## Not yet done

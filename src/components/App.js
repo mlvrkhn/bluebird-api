@@ -8,7 +8,7 @@ import BrregAPI from '../api/api';
 
 const App = () => {
     const api = new BrregAPI();
-    api.getRegister('?navn=oslo').then((resp) => console.log(resp));
+    api.getRegister('?navn=martin-gawlyta').then((resp) => console.log(resp));
 
     useEffect(() => {
         // call API

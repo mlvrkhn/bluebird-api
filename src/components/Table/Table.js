@@ -1,12 +1,31 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import StyledTable from './Table.styled';
 import TableRow from '../TableRow';
-
 import fields from '../../../tableFields';
 
 function Table() {
+    const brregRecords = useSelector((state) => state.results);
+
     const renderTableHeader = () =>
         fields.map((field, index) => <th key={index}>{field}</th>);
+
+    const renderBrregRecords = () => {
+        return brregRecords.map((company) => {
+            const { orgNum, navn, email, website, bankrupt } = company;
+
+            return (
+                <TableRow key={orgNum}>
+                    <td>{orgNum}</td>
+                    <td>{navn}</td>
+                    <td>{website}</td>
+                    <td>{email}</td>
+                    <td>{bankrupt ? 'True' : 'False'}</td>
+                </TableRow>
+            );
+        });
+    };
 
     return (
         <StyledTable>
@@ -14,25 +33,14 @@ function Table() {
                 <tr
                     style={{
                         color: '#3DA395',
-                        fontSize: '1.1em',
+                        fontSize: '1.3em',
                     }}
                 >
                     {renderTableHeader()}
                 </tr>
             </thead>
 
-            <tbody>
-                <TableRow>
-                    <td>Firma I</td>
-                </TableRow>
-                <TableRow>
-                    <td>999 888 777</td>
-                    <td>Firma II</td>
-                    <td>www.firmaii.no</td>
-                    <td>firma@jp.com</td>
-                    <td>JA / NEI</td>
-                </TableRow>
-            </tbody>
+            <tbody>{renderBrregRecords()}</tbody>
         </StyledTable>
     );
 }
