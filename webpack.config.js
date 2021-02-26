@@ -15,6 +15,12 @@ module.exports = {
                 use: 'babel-loader',
             },
             {
+                test: /\.(ttf|otf|woff|woff2)$/,
+                use: {
+                    loader: 'file-loader',
+                },
+            },
+            {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: {
                     loader: 'file-loader',
