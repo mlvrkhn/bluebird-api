@@ -15,20 +15,7 @@
 
 ## Nice to have:
 - more functionality if you want
-
-## API:
-https://data.brreg.no/enhetsregisteret/api/enheter/112233445
-
 ## TODO
-- install and configute Webpack
 - add nice font
-- add Neumorphism Design
 - Prop Types
-- style
-
-## Colors: 
-
-blue #502E90;
-white #ECE9F3;
-green #3DA395;
-gray #5C6265;
+- 
