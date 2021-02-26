@@ -18,4 +18,13 @@
 ## TODO
 - add nice font
 - Prop Types
-- 
+  
+
+## Project features:
+- upload and use external fonts via file-loader,
+- neumophic design,
+- Redux state management,
+- used Hooks: useState, useEffect, useDispatch, useSelector, custom,
+
+## Not yet done
+- independent, modular API communication,

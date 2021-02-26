@@ -13,7 +13,10 @@ const GlobalStyle = createGlobalStyle`
         background-color: ${({ theme }) => theme.color.blue};
         color: ${({ theme }) => theme.color.white};
         font-family: 'Poppins'
-    };
+    }
+    /* th, tr, td {
+        border: 1px solid ${({ theme }) => theme.color.green};
+    } */
 `;
 
 export default GlobalStyle;

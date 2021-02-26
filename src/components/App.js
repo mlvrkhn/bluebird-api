@@ -8,7 +8,9 @@ import BrregAPI from '../api/api';
 
 const App = () => {
     const api = new BrregAPI();
-    // api.getRepos('920647960');
+    api.getRegister(
+        'https://data.brreg.no/enhetsregisteret/api/enheter?navn=oslo'
+    ).then((resp) => console.log(resp));
 
     return (
         <ThemeProvider theme={theme}>

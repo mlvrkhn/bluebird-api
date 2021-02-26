@@ -1,19 +1,25 @@
 class BrregAPI {
+    fullUrl = 'https://data.brreg.no/enhetsregisteret/api/enheter/920647960';
+    navnUrl = 'https://data.brreg.no/enhetsregisteret/api/enheter?navn=oslo';
     url = 'https://data.brreg.no/enhetsregisteret/api/enheter/';
     corsUrl = 'https://cors-anywhere.herokuapp.com/';
 
-    getRepos = (query) => {
-        return fetch(`${this.corsUrl}${this.url}${query}`)
+    getRegister = (query) => {
+        return fetch(query)
+            .then(this.handleErrors)
             .then((resp) => {
-                if (!resp.ok) {
-                    Promise.reject('Promise rejected by BrregAPI');
-                }
                 return resp.json();
-            })
-            .then((data) => {
-                console.log(data);
             });
     };
+
+    handleErrors(resp) {
+        if (!resp.ok) {
+            throw Error(resp.statusText);
+        }
+        return resp;
+    }
 }
 
 export default BrregAPI;
+
+// NAVN search https://data.brreg.no/enhetsregisteret/api/enheter?navn=oslo
