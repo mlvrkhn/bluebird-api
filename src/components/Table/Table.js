@@ -10,7 +10,18 @@ function Table() {
     const brregRecords = useSelector((state) => state.results);
 
     const renderTableHeader = () =>
-        fields.map((field, index) => <th key={index}>{field}</th>);
+        fields.map((field, index) => (
+            <th
+                style={{
+                    height: '50px',
+                    paddingBottom: '20px',
+                    textAlign: 'left',
+                }}
+                key={index}
+            >
+                {field}
+            </th>
+        ));
 
     const renderBrregRecords = () => {
         return brregRecords.map((company) => {

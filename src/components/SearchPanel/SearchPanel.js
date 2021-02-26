@@ -1,13 +1,13 @@
 import React from 'react';
 import StyledSearchPanel from './SearchPanel.styled';
 import Header from '../Header';
-import Table from '../Table';
+import Results from '../Results';
 
 const SearchPanel = () => {
     return (
         <StyledSearchPanel>
             <Header />
-            <Table />
+            <Results />
         </StyledSearchPanel>
     );
 };
