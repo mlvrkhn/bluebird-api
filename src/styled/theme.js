@@ -15,6 +15,7 @@ const theme = {
         small: '0.5rem',
         medium: '0.75rem',
         large: '1.25rem',
+        xlarge: '2.5rem',
     },
     borderRadius: {
         small: '1rem',

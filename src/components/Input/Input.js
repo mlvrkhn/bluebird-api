@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import StyledInput from './Input.styled';
-// import { setQueryAction } from '../../actions/';
+import { useDispatch } from 'react-redux';
+
+import { setQueryAction } from '../../actions/actions';
 
 const Input = () => {
     const [query, setQuery] = useState('');
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        console.log('effekt used');
-        // dispatch(setQueryAction());
-        // return () => {
-        //     cleanup;
-        // };
+        dispatch(setQueryAction(query));
     }, [query]);
+
     return (
         <StyledInput
             onChange={(e) => {
                 setQuery(e.target.value);
             }}
+            value={query}
             placeholder='Søk Brønnøysundregisteret...'
         />
     );

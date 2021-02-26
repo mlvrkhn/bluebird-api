@@ -7,7 +7,7 @@ const StyledSearchPanel = styled.section`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: ${({ theme }) => theme.innerPadding.large};
+    padding: ${({ theme }) => theme.innerPadding.xlarge};
     box-shadow: ${({ theme }) => theme.boxShadow.outer};
     border-radius: ${({ theme }) => theme.borderRadius.small};
     display: flex;

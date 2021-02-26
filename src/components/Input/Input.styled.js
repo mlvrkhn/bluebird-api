@@ -9,12 +9,14 @@ const StyledInput = styled.input`
     background-color: ${({ theme }) => theme.color.blue};
     font-size: ${({ theme }) => theme.fontSize.xlarge};
     border-radius: ${({ theme }) => theme.borderRadius.medium};
+    color: ${({ theme }) => theme.color.green};
     padding: ${({ theme }) => theme.innerPadding.medium};
     box-shadow: ${({ theme }) => theme.boxShadow.inner};
     padding-left: 30px;
     &:focus {
         border: 1px solid;
         border-color: ${({ theme }) => theme.color.green};
+        color: ${({ theme }) => theme.color.green};
         outline: 0;
     }
     &::placeholder {
