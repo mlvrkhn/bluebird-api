@@ -8,7 +8,14 @@ import BrregAPI from '../api/api';
 
 const App = () => {
     const api = new BrregAPI();
-    api.getRepos();
+    api.getRepos('920647960');
+    // try {
+    //     const odpowiedz = await api.getRepos('920647960');
+    //     const res = await odpowiedz;
+    //     console.log(res);
+    // } catch (error) {
+
+    // }
 
     // componentDidMount = () => {
     //     console.log('mounted');
