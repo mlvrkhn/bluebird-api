@@ -1,11 +1,12 @@
 class BrregAPI {
-    fullUrl = 'https://data.brreg.no/enhetsregisteret/api/enheter/920647960';
-    navnUrl = 'https://data.brreg.no/enhetsregisteret/api/enheter?navn=oslo';
-    url = 'https://data.brreg.no/enhetsregisteret/api/enheter/';
+    ORG = 'https://data.brreg.no/enhetsregisteret/api/enheter/920647960';
+    NAVN = 'https://data.brreg.no/enhetsregisteret/api/enheter?navn=oslo';
+    url = 'https://data.brreg.no/enhetsregisteret/api/enheter';
     corsUrl = 'https://cors-anywhere.herokuapp.com/';
 
     getRegister = (query) => {
-        return fetch(query)
+        console.log(`${this.url}${query}`);
+        return fetch(`${this.url}${query}`)
             .then(this.handleErrors)
             .then((resp) => {
                 return resp.json();
@@ -21,5 +22,3 @@ class BrregAPI {
 }
 
 export default BrregAPI;
-
-// NAVN search https://data.brreg.no/enhetsregisteret/api/enheter?navn=oslo

@@ -1,14 +1,14 @@
 import types from '../types/types';
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case 'SET_QUERY':
+const reducer = (state, { type, payload }) => {
+    switch (type) {
+        case types.SET_QUERY:
             console.log('SET_QUERY');
             return {
                 ...state,
-                query: action.payload,
+                query: payload,
             };
-        case 'ADD_RECORD':
+        case types.ADD_RECORD:
             console.log('ADD_RECORD');
             return state;
         default:

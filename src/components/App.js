@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import GlobalStyle from '../styled/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 import theme from '../styled/theme';
@@ -8,9 +8,11 @@ import BrregAPI from '../api/api';
 
 const App = () => {
     const api = new BrregAPI();
-    api.getRegister(
-        'https://data.brreg.no/enhetsregisteret/api/enheter?navn=oslo'
-    ).then((resp) => console.log(resp));
+    api.getRegister('?navn=oslo').then((resp) => console.log(resp));
+
+    useEffect(() => {
+        // call API
+    }, []);
 
     return (
         <ThemeProvider theme={theme}>
