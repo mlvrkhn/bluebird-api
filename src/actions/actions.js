@@ -1,7 +1,6 @@
 import types from '../types/types';
 
 export const setQueryAction = (query) => {
-    console.log('🚀 ~ setQueryAction ', query);
     return {
         type: types.SET_QUERY,
         payload: query,
@@ -14,15 +13,15 @@ export const fetchRegisterPending = () => {
     };
 };
 
-export const fetchRegisterSuccess = (records) => {
+export const fetchRegisterSuccess = (results) => {
     return {
         type: types.FETCH_REGISTER_SUCCESS,
-        records: records,
+        payload: results,
     };
 };
-export const fetchRegisterFailure = (error) => {
+export const fetchRegisterError = (error) => {
     return {
         type: types.FETCH_REGISTER_ERROR,
-        error: error,
+        payload: error,
     };
 };

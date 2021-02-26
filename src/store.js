@@ -3,6 +3,7 @@ import reducer from '../src/reducers/index';
 
 const initialState = {
     query: '',
+    pending: false,
     results: [
         {
             orgNum: '911738061',

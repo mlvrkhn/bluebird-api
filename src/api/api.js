@@ -1,18 +1,22 @@
+import {
+    fetchRegisterError,
+    fetchRegisterSuccess,
+    fetchRegisterPending,
+} from '../actions/actions';
+
 class BrregAPI {
     url = 'https://data.brreg.no/enhetsregisteret/api/enheter';
-    ORG = 'https://data.brreg.no/enhetsregisteret/api/enheter/920647960';
-    NAVN = 'https://data.brreg.no/enhetsregisteret/api/enheter?navn=oslo';
-    url = 'https://data.brreg.no/enhetsregisteret/api/enheter/';
     corsUrl = 'https://cors-anywhere.herokuapp.com/';
 
     getRegister = (query) => {
+        fetchRegisterPending();
         const cleanQuery = query.replace(/[^0-9.]/g, '');
         let queryUrl = '';
 
         if (Number(cleanQuery)) {
             queryUrl = `${this.url}/${cleanQuery}`;
         } else {
-            queryUrl = `${this.url}?navn=${cleanQuery}`;
+            queryUrl = `${this.url}?navn=${query}`;
         }
 
         return fetch(queryUrl)
@@ -24,7 +28,7 @@ class BrregAPI {
 
     handleErrors(resp) {
         if (!resp.ok) {
-            throw Error(resp.statusText);
+            fetchRegisterError(resp.statusText);
         }
         return resp;
     }
