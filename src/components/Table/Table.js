@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import StyledTable from './Table.styled';
 import TableRow from '../TableRow';
 import fields from '../../../tableFields';
+import Cell from '../Cell/Cell';
 
 function Table() {
     const brregRecords = useSelector((state) => state.results);
@@ -17,11 +18,13 @@ function Table() {
 
             return (
                 <TableRow key={orgNum}>
-                    <td>{orgNum}</td>
-                    <td>{navn}</td>
-                    <td>{website}</td>
-                    <td>{email}</td>
-                    <td>{bankrupt ? 'True' : 'False'}</td>
+                    <Cell>{orgNum}</Cell>
+                    <Cell>{navn}</Cell>
+                    <Cell>{website}</Cell>
+                    <Cell>
+                        <a href='#'>{email}</a>
+                    </Cell>
+                    <Cell>{bankrupt ? 'True' : 'False'}</Cell>
                 </TableRow>
             );
         });
@@ -29,11 +32,16 @@ function Table() {
 
     return (
         <StyledTable>
-            <thead>
+            <thead
+                style={{
+                    marginBottom: '20px',
+                }}
+            >
                 <tr
                     style={{
                         color: '#3DA395',
                         fontSize: '1.3em',
+                        marginBottom: '20px',
                     }}
                 >
                     {renderTableHeader()}

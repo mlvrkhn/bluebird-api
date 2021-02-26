@@ -22,3 +22,8 @@ class BrregAPI {
 }
 
 export default BrregAPI;
+
+// if (items) {
+//       if (items._embedded && items._embedded.enheter) {
+//         return items._embedded.enheter.map(makeItem);
+//       }
