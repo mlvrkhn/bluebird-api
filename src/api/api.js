@@ -8,17 +8,18 @@ class BrregAPI {
     corsUrl = 'https://cors-anywhere.herokuapp.com/';
 
     getRegister = (query) => {
-        fetchRegisterPending();
-        const cleanQuery = query.replace(/[^0-9.]/g, '');
-        let queryUrl = '';
+        const queryWithoutFormatting = query.replace(/[^0-9.]/g, '');
+        const getIpQuery = () => {
+            let queryUrl = '';
+            if (Number(queryWithoutFormatting)) {
+                queryUrl = `${this.url}/${queryWithoutFormatting}`;
+            } else {
+                queryUrl = `${this.url}?navn=${query}`;
+            }
+            return queryUrl;
+        };
 
-        if (Number(cleanQuery)) {
-            queryUrl = `${this.url}/${cleanQuery}`;
-        } else {
-            queryUrl = `${this.url}?navn=${query}`;
-        }
-
-        return fetch(queryUrl)
+        return fetch(getIpQuery())
             .then(this.handleErrors)
             .then((resp) => {
                 return resp.json();
@@ -27,7 +28,6 @@ class BrregAPI {
 
     handleErrors(resp) {
         if (!resp.ok) {
-            fetchRegisterError(resp.statusText);
         }
         return resp;
     }
@@ -39,3 +39,15 @@ export default BrregAPI;
 //       if (items._embedded && items._embedded.enheter) {
 //         return items._embedded.enheter.map(makeItem);
 //       }
+
+export const getIP = () => (dispatch, getState) => {
+    return fetch(url)
+        .then((resp) => {
+            if (resp.ok) {
+                return resp.json();
+            }
+            throw new Error('Err!');
+        })
+        .then((resp) => dispatch(setIP(resp.ip)))
+        .catch((err) => dispatch(addError(err)));
+};
