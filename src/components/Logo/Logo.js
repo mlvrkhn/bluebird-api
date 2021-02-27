@@ -1,11 +1,12 @@
 import React from 'react';
 
-function Logo({ src, alt }) {
+function Logo({ src, alt, height, padding }) {
     return (
         <img
             style={{
-                height: '60px',
+                height: height,
                 marginLeft: '10px',
+                paddingBottom: padding,
             }}
             src={src}
             alt={alt}
