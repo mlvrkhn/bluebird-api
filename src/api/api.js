@@ -1,18 +1,14 @@
-import { fetchRegisterError, fetchRegisterPending } from '../actions/actions';
-
-// I CANNOT USE HOOKS IN CLASS COMPONENT!
-import { useDispatch } from 'react-redux';
-
 class BrregAPI {
     url = 'https://data.brreg.no/enhetsregisteret/api/enheter';
     corsUrl = 'https://cors-anywhere.herokuapp.com/';
 
     getRegister = (query) => {
-        const queryWithoutFormatting = query.replace(/[^0-9.]/g, '');
+        const formattingFreeQuery = query.replace(/[^0-9.]/g, '');
+
         const getIpQuery = () => {
             let queryUrl = '';
-            if (Number(queryWithoutFormatting)) {
-                queryUrl = `${this.url}/${queryWithoutFormatting}`;
+            if (Number(formattingFreeQuery)) {
+                queryUrl = `${this.url}/${formattingFreeQuery}`;
             } else {
                 queryUrl = `${this.url}?navn=${query}`;
             }
@@ -28,26 +24,10 @@ class BrregAPI {
 
     handleErrors(resp) {
         if (!resp.ok) {
+            throw Error(resp.statusText);
         }
         return resp;
     }
 }
 
 export default BrregAPI;
-
-// if (items) {
-//       if (items._embedded && items._embedded.enheter) {
-//         return items._embedded.enheter.map(makeItem);
-//       }
-
-export const getIP = () => (dispatch, getState) => {
-    return fetch(url)
-        .then((resp) => {
-            if (resp.ok) {
-                return resp.json();
-            }
-            throw new Error('Err!');
-        })
-        .then((resp) => dispatch(setIP(resp.ip)))
-        .catch((err) => dispatch(addError(err)));
-};

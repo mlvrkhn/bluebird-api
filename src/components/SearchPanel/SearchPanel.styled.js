@@ -2,11 +2,13 @@ import styled from 'styled-components';
 
 const StyledSearchPanel = styled.section`
     position: absolute;
-    width: 900px;
-    height: 600px;
+    display: block;
+    width: 80%;
+    min-height: 500px;
+    margin: auto;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 20px;
+    transform: translate(-50%);
     padding: ${({ theme }) => theme.innerPadding.xlarge};
     box-shadow: ${({ theme }) => theme.boxShadow.outer};
     border-radius: ${({ theme }) => theme.borderRadius.small};

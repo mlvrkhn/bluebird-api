@@ -31,7 +31,7 @@ const App = () => {
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyle />
-            <SearchPanel />
+            <SearchPanel style={{ position: 'relative' }} />
         </ThemeProvider>
     );
 };

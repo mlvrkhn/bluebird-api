@@ -15,8 +15,8 @@
 
 ## Nice to have:
 - more functionality if you want
+
 ## TODO
-- add nice font
 - Prop Types
   
 
@@ -25,7 +25,9 @@
 - type checking with PropTypes,
 - neumophic design,
 - Redux state management with Thunk middleware,
-- used Hooks: useState, useEffect, useDispatch, useSelector, custom,
+- used Hooks: useState, useEffect, useDispatch, useSelector,
+- Webpack and Babel configuration,
+- 
 
 ## Not yet done
 - independent, modular API communication,

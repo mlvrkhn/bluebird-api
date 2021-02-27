@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react';
 import StyledInput from './Input.styled';
 import { useDispatch } from 'react-redux';
 
-import { setQueryAction } from '../../actions/actions';
+import { setQuery } from '../../actions/actions';
 
 const Input = () => {
-    const [query, setQuery] = useState('');
+    const [userInput, setUserInput] = useState('');
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setQueryAction(query));
-    }, [query]);
+        dispatch(setQuery(userInput));
+    }, [userInput]);
 
     return (
         <>
             <StyledInput
                 onChange={(e) => {
-                    setQuery(e.target.value);
+                    setUserInput(e.target.value);
                 }}
-                value={query}
+                value={userInput}
                 placeholder='Søk Brønnøysundregisteret...'
             />
         </>

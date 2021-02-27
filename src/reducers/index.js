@@ -15,7 +15,7 @@ const reducer = (state, action) => {
         case types.FETCH_REGISTER_SUCCESS:
             return {
                 ...state,
-                results: [...state.results, action.payload],
+                results: [action.payload],
             };
         case types.FETCH_REGISTER_ERROR:
             return {

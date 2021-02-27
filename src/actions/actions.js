@@ -1,6 +1,6 @@
 import types from '../types/types';
 
-export const setQueryAction = (query) => {
+export const setQuery = (query) => {
     return {
         type: types.SET_QUERY,
         payload: query,
@@ -25,3 +25,15 @@ export const fetchRegisterError = (error) => {
         payload: error,
     };
 };
+
+// export const getIP = () => (dispatch, getState) => {
+//     return fetch(url)
+//         .then((resp) => {
+//             if (resp.ok) {
+//                 return resp.json();
+//             }
+//             throw new Error('Err!');
+//         })
+//         .then((resp) => dispatch(setIP(resp.ip)))
+//         .catch((err) => dispatch(addError(err)));
+// };

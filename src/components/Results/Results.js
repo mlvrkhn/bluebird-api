@@ -6,34 +6,47 @@ import { useSelector } from 'react-redux';
 const Results = () => {
     const brregRecords = useSelector((state) => state.results);
 
-    const renderRow = () =>
-        brregRecords.map((company, index) => {
-            const { orgNum, navn, email, website, bankrupt } = company;
-            return (
-                <Record key={index} onHover={() => console.log('hoooover')}>
-                    <p>{orgNum}</p>
-                    <p>{navn}</p>
-                    <p>{email}</p>
-                    <p>{website}</p>
-                </Record>
-            );
+    const renderRows = () => {
+        return brregRecords.map((record) => {
+            if (record._embedded && record._embedded.enheter) {
+                return record._embedded.enheter.map((company, index) => {
+                    return (
+                        <Record
+                            key={index}
+                            data={company}
+                            onHover={() => console.log('hoooover')}
+                        />
+                    );
+                });
+            } else {
+                console.log('error with mapping state to Record');
+            }
         });
+    };
 
-    // const renderTableHeader = () => {
-    //     return (
-    //         <Record>
-    //             <p>Organisasjonsnummer</p>
-    //             <p>Navn</p>
-    //             <p>E-mail</p>
-    //             <p>www</p>
-    //         </Record>
-    //     );
-    // };
+    const renderTableHeader = () => {
+        return (
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    textAlign: 'left',
+                    fontWeight: '900',
+                }}
+            >
+                <p>Org. Nr</p>
+                <p>Navn</p>
+                <p>E-mail</p>
+                <p>www</p>
+                <p>Konkurs</p>
+            </div>
+        );
+    };
 
     return (
         <StyledResults>
-            {/* {renderTableHeader()} */}
-            {renderRow()}
+            {renderTableHeader()}
+            {renderRows()}
         </StyledResults>
     );
 };
