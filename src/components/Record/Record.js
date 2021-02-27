@@ -4,16 +4,23 @@ import StyledRecord from './Record.styled';
 
 const Record = ({ data, onHover }) => {
     const { organisasjonsnummer, navn, hjemmeside, konkurs, email } = data;
-    console.log('🚀 ~ Record ~ konkurs', konkurs);
+
     return (
         <StyledRecord onMouseEnter={onHover} bold={konkurs}>
             <StyledCell>{organisasjonsnummer}</StyledCell>
             <StyledCell>{navn}</StyledCell>
-            <StyledCell>{hjemmeside ? hjemmeside : ''}</StyledCell>
-            <StyledCell>{email ? email : ''}</StyledCell>
+            <StyledCell>
+                {hjemmeside ? (
+                    <a href={`www.${hjemmeside}`}>{hjemmeside}</a>
+                ) : (
+                    ''
+                )}
+            </StyledCell>
+            <StyledCell>
+                {email ? <a href={'mailto:' + email}>{email}</a> : 'N/A'}
+            </StyledCell>
         </StyledRecord>
     );
 };
 
 export default Record;
-// StyledCell;

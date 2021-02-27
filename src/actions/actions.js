@@ -26,7 +26,7 @@ export const fetchRegisterError = (error) => {
     };
 };
 
-// export const getIP = () => (dispatch, getState) => {
+// export const getDataFromRegister = () => (dispatch, getState) => {
 //     return fetch(url)
 //         .then((resp) => {
 //             if (resp.ok) {

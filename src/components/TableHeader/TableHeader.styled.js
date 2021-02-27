@@ -6,7 +6,6 @@ const StyledTableHeader = styled.div`
     color: ${({ theme }) => theme.color.green};
     font-size: ${({ theme }) => theme.fontSize.large};
     & > div {
-        /* left: -10%; */
         margin-right: 70px;
     }
 `;

@@ -6,8 +6,8 @@ const TableHeader = () => {
         <StyledTableHeader>
             <div>Org. Nr</div>
             <div>Navn</div>
-            <div>E-mail</div>
             <div>WWW</div>
+            <div>E-mail</div>
         </StyledTableHeader>
     );
 };
