@@ -1,6 +1,7 @@
 import React from 'react';
 import StyledResults from './Results.styled';
 import Record from '../Record';
+import TableHeader from '../TableHeader';
 import { useSelector } from 'react-redux';
 
 const Results = () => {
@@ -24,28 +25,9 @@ const Results = () => {
         });
     };
 
-    const renderTableHeader = () => {
-        return (
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    textAlign: 'left',
-                    fontWeight: '900',
-                }}
-            >
-                <p>Org. Nr</p>
-                <p>Navn</p>
-                <p>E-mail</p>
-                <p>www</p>
-                <p>Konkurs</p>
-            </div>
-        );
-    };
-
     return (
         <StyledResults>
-            {renderTableHeader()}
+            <TableHeader />
             {renderRows()}
         </StyledResults>
     );

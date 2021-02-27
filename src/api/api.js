@@ -8,7 +8,7 @@ class BrregAPI {
         const getIpQuery = () => {
             let queryUrl = '';
             if (Number(formattingFreeQuery)) {
-                queryUrl = `${this.url}/${formattingFreeQuery}`;
+                queryUrl = `${this.url}?organisasjonsnummer=${formattingFreeQuery}`;
             } else {
                 queryUrl = `${this.url}?navn=${query}`;
             }

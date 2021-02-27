@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledSearchPanel = styled.section`
     position: absolute;
     display: block;
-    width: 80%;
+    width: 900px;
     min-height: 500px;
     margin: auto;
     left: 50%;
