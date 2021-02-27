@@ -8,6 +8,7 @@ import {
     fetchRegisterPending,
     fetchRegisterSuccess,
     fetchRegisterFailed,
+    getDataFromRegister,
 } from '../actions/actions';
 import BrregAPI from '../api/api';
 
@@ -17,9 +18,10 @@ const App = () => {
     const query = useSelector((state) => state.query);
 
     const sendApiRequest = () => {
-        api.getRegister(query).then((resp) => {
-            dispatch(fetchRegisterSuccess(resp));
-        });
+        dispatch(getDataFromRegister());
+        // api.getRegister(query).then((resp) => {
+        //     dispatch(fetchRegisterSuccess(resp));
+        // });
     };
 
     useEffect(() => {

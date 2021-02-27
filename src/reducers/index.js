@@ -1,6 +1,13 @@
 import types from '../types/types';
 
-const reducer = (state, action) => {
+const initialState = {
+    query: '',
+    pending: false,
+    results: [],
+    errors: '',
+};
+
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case types.SET_QUERY:
             return {

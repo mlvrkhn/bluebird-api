@@ -8,6 +8,7 @@ export const setQuery = (query) => {
 };
 
 export const fetchRegisterPending = () => {
+    console.log('heh');
     return {
         type: types.FETCH_REGISTER_PENDING,
     };
@@ -26,14 +27,15 @@ export const fetchRegisterError = (error) => {
     };
 };
 
-// export const getDataFromRegister = () => (dispatch, getState) => {
-//     return fetch(url)
-//         .then((resp) => {
-//             if (resp.ok) {
-//                 return resp.json();
-//             }
-//             throw new Error('Err!');
-//         })
-//         .then((resp) => dispatch(setIP(resp.ip)))
-//         .catch((err) => dispatch(addError(err)));
-// };
+export const getDataFromRegister = () => (dispatch, getState) => {
+    dispatch(fetchRegisterPending);
+    // return fetch(url)
+    //     .then((resp) => {
+    //         if (resp.ok) {
+    //             return resp.json();
+    //         }
+    //         throw new Error('Err!');
+    //     })
+    //     .then((resp) => dispatch(setIP(resp.ip)))
+    //     .catch((err) => dispatch(addError(err)));
+};
