@@ -44,17 +44,17 @@ export const getDataFromRegister = () => (dispatch, getState) => {
         dispatch(saveResultsToStore(enheter));
         dispatch(fetchRegisterSuccess());
     });
-
-    // return fetch(url)
-    //     .then((resp) => {
-    //         if (resp.ok) {
-    //             return resp.json();
-    //         }
-    //         throw new Error('Err!');
-    //     })
-    //     .then((resp) => dispatch(setIP(resp.ip)))
-    //     .catch((err) => dispatch(addError(err)));
 };
+
+// return fetch(url)
+//     .then((resp) => {
+//         if (resp.ok) {
+//             return resp.json();
+//         }
+//         throw new Error('Err!');
+//     })
+//     .then((resp) => dispatch(setIP(resp.ip)))
+//     .catch((err) => dispatch(addError(err)));
 
 // function getDataFromRegister() {
 //     return (dispatch) => {

@@ -27,6 +27,7 @@
 - Redux state management with Thunk middleware,
 - used Hooks: useState, useEffect, useDispatch, useSelector,
 - Webpack and Babel configuration,
+- introduced global app theme, Global Styling,
 
 ## Not yet done
 - independent, modular API communication,

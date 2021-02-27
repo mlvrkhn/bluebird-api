@@ -8,7 +8,6 @@ const StyledRecord = styled.div`
     width: 100%;
     font-size: ${({ theme }) => theme.fontSize.medium};
     &:hover {
-        /* background-color: ${({ theme }) => theme.color.green}; */
         box-shadow: ${({ theme }) => theme.boxShadow.inner};
         border-radius: ${({ theme }) => theme.borderRadius.small};
     }

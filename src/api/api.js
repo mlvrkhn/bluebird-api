@@ -14,12 +14,9 @@ class BrregAPI {
             }
             return queryUrl;
         };
-
         return fetch(getIpQuery())
             .then(this.handleErrors)
-            .then((resp) => {
-                return resp.json();
-            });
+            .then((resp) => resp.json());
     };
 
     handleErrors(resp) {
