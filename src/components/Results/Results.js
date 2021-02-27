@@ -8,20 +8,14 @@ const Results = () => {
     const brregRecords = useSelector((state) => state.results);
 
     const renderRows = () => {
-        return brregRecords.map((record) => {
-            if (record._embedded && record._embedded.enheter) {
-                return record._embedded.enheter.map((company, index) => {
-                    return (
-                        <Record
-                            key={index}
-                            data={company}
-                            onHover={() => console.log('hoooover')}
-                        />
-                    );
-                });
-            } else {
-                console.log('error with mapping state to Record');
-            }
+        return brregRecords.map((record, index) => {
+            return (
+                <Record
+                    key={index}
+                    data={record}
+                    onHover={() => console.log('hoooover')}
+                />
+            );
         });
     };
 

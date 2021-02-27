@@ -1,4 +1,5 @@
 import types from '../types/types';
+import BrregAPI from '../api/api';
 
 export const setQuery = (query) => {
     return {
@@ -8,18 +9,11 @@ export const setQuery = (query) => {
 };
 
 export const fetchRegisterPending = () => {
-    console.log('heh');
     return {
         type: types.FETCH_REGISTER_PENDING,
     };
 };
 
-export const fetchRegisterSuccess = (results) => {
-    return {
-        type: types.FETCH_REGISTER_SUCCESS,
-        payload: results,
-    };
-};
 export const fetchRegisterError = (error) => {
     return {
         type: types.FETCH_REGISTER_ERROR,
@@ -27,8 +21,30 @@ export const fetchRegisterError = (error) => {
     };
 };
 
+export const saveResultsToStore = (results) => {
+    return {
+        type: types.SAVE_RESULTS_TO_STORE,
+        payload: results,
+    };
+};
+
+export const fetchRegisterSuccess = () => {
+    return {
+        type: types.FETCH_REGISTER_SUCCESS,
+    };
+};
+
 export const getDataFromRegister = () => (dispatch, getState) => {
-    dispatch(fetchRegisterPending);
+    const api = new BrregAPI();
+    const state = getState();
+
+    dispatch(fetchRegisterPending());
+    api.getRegister(state.query).then((response) => {
+        const { _embedded: enheter } = response;
+        dispatch(saveResultsToStore(enheter));
+        dispatch(fetchRegisterSuccess());
+    });
+
     // return fetch(url)
     //     .then((resp) => {
     //         if (resp.ok) {
@@ -39,3 +55,21 @@ export const getDataFromRegister = () => (dispatch, getState) => {
     //     .then((resp) => dispatch(setIP(resp.ip)))
     //     .catch((err) => dispatch(addError(err)));
 };
+
+// function getDataFromRegister() {
+//     return (dispatch) => {
+//         dispatch(fetchProductsPending());
+//         fetch('https://exampleapi.com/products')
+//             .then((res) => res.json())
+//             .then((res) => {
+//                 if (res.error) {
+//                     throw res.error;
+//                 }
+//                 dispatch(fetchRegisterSuccess());
+//                 dispatch(saveResultsToStore(res));
+//             })
+//             .catch((error) => {
+//                 dispatch(fetchRegisterError());
+//             });
+//     };
+// }
