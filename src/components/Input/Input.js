@@ -13,13 +13,15 @@ const Input = () => {
     }, [query]);
 
     return (
-        <StyledInput
-            onChange={(e) => {
-                setQuery(e.target.value);
-            }}
-            value={query}
-            placeholder='Søk Brønnøysundregisteret...'
-        />
+        <>
+            <StyledInput
+                onChange={(e) => {
+                    setQuery(e.target.value);
+                }}
+                value={query}
+                placeholder='Søk Brønnøysundregisteret...'
+            />
+        </>
     );
 };
 

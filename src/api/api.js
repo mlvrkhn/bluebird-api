@@ -1,8 +1,7 @@
-import {
-    fetchRegisterError,
-    fetchRegisterSuccess,
-    fetchRegisterPending,
-} from '../actions/actions';
+import { fetchRegisterError, fetchRegisterPending } from '../actions/actions';
+
+// I CANNOT USE HOOKS IN CLASS COMPONENT!
+import { useDispatch } from 'react-redux';
 
 class BrregAPI {
     url = 'https://data.brreg.no/enhetsregisteret/api/enheter';
