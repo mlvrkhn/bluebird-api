@@ -1,8 +1,2 @@
-const fields = [
-    'Organisasjonsnummer',
-    'Navn',
-    'Hjemmeside',
-    'Email',
-    'Konkurs',
-];
+const fields = ['Org. Nr', 'Navn', 'Hjemmeside', 'Email'];
 export default fields;
