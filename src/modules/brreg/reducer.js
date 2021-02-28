@@ -2,9 +2,9 @@ import types from './types';
 
 const initialState = {
     query: '',
-    pending: true,
+    pending: false,
     results: [],
-    errors: '',
+    fetchSuccess: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,19 +22,21 @@ const reducer = (state = initialState, action) => {
         case types.SAVE_RESULTS_TO_STORE:
             return {
                 ...state,
-                results: action.payload.enheter,
+                pending: false,
+                results: action.payload,
             };
         case types.FETCH_REGISTER_SUCCESS:
             return {
                 ...state,
                 fetchSuccess: true,
-                pending: false,
             };
         case types.FETCH_REGISTER_ERROR:
             return {
                 ...state,
-                error: action.payload,
                 pending: false,
+                query: '',
+                results: [],
+                error: action.payload.message,
             };
         default:
             return state;

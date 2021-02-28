@@ -39,37 +39,17 @@ export const getDataFromRegister = () => (dispatch, getState) => {
     const state = getState();
 
     dispatch(fetchRegisterPending());
-    api.getRegister(state.query).then((response) => {
-        const { _embedded: enheter } = response;
-        dispatch(saveResultsToStore(enheter));
-        dispatch(fetchRegisterSuccess());
-    });
+
+    api.getRegister(state.query)
+        .then((resp) => {
+            const {
+                _embedded: { enheter },
+            } = resp;
+            dispatch(saveResultsToStore(enheter));
+            dispatch(fetchRegisterSuccess());
+        })
+        .catch((err) => {
+            console.log('🚀 ~ getDataFromRegister ~ err', err);
+            dispatch(fetchRegisterError(err));
+        });
 };
-
-// return fetch(url)
-//     .then((resp) => {
-//         if (resp.ok) {
-//             return resp.json();
-//         }
-//         throw new Error('Err!');
-//     })
-//     .then((resp) => dispatch(setIP(resp.ip)))
-//     .catch((err) => dispatch(addError(err)));
-
-// function getDataFromRegister() {
-//     return (dispatch) => {
-//         dispatch(fetchProductsPending());
-//         fetch('https://exampleapi.com/products')
-//             .then((res) => res.json())
-//             .then((res) => {
-//                 if (res.error) {
-//                     throw res.error;
-//                 }
-//                 dispatch(fetchRegisterSuccess());
-//                 dispatch(saveResultsToStore(res));
-//             })
-//             .catch((error) => {
-//                 dispatch(fetchRegisterError());
-//             });
-//     };
-// }

@@ -12,15 +12,18 @@ const Results = () => {
     };
 
     const renderRows = () => {
-        return brregRecords.map((record, index) => {
-            return (
-                <Record
-                    key={index}
-                    data={record}
-                    onHover={(e) => displayExtraInfo(e.target)}
-                />
-            );
-        });
+        if (brregRecords) {
+            return brregRecords.map((record, index) => {
+                return (
+                    <Record
+                        key={index}
+                        data={record}
+                        onHover={(e) => displayExtraInfo(e.target)}
+                    />
+                );
+            });
+        }
+        return;
     };
 
     return (
