@@ -7,13 +7,14 @@ const StyledRecord = styled.div`
     margin: 10px 0;
     width: 100%;
     font-size: ${({ theme }) => theme.fontSize.medium};
+    border: ${({ bold }) => (bold ? '1px solid red' : 'none')};
+    border-radius: ${({ theme }) => theme.borderRadius.small};
     &:hover {
         box-shadow: ${({ theme }) => theme.boxShadow.inner};
         border-radius: ${({ theme }) => theme.borderRadius.small};
     }
     & > div {
-        color: ${({ bold }) => (bold ? 'red' : '')};
-        text-align: 'left';
+        font-weight: ${({ bold }) => (bold ? '900' : 'normal')};
     }
 `;
 
