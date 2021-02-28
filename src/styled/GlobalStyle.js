@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     html {
         background-color: ${({ theme }) => theme.color.blue};
         color: ${({ theme }) => theme.color.white};
-        font-family: 'Poppins, Helvetica'
+        font-family: 'Poppins'
     }
     a {
         color: ${({ theme }) => theme.color.white};

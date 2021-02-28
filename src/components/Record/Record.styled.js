@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const StyledRecord = styled.div`
     padding: 5px;
     display: flex;
-    justify-content: space-between;
     margin: 10px 0;
     width: 100%;
     font-size: ${({ theme }) => theme.fontSize.medium};

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const StyledHeader = styled.div`
     width: 500px;
     margin-top: 30px;
+    margin-bottom: 30px;
     height: 100px;
     display: flex;
     flex-direction: row;
