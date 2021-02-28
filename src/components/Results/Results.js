@@ -7,21 +7,10 @@ import { useSelector } from 'react-redux';
 
 const Results = () => {
     const brregRecords = useSelector((state) => state.results);
-
-    const displayExtraInfo = (e) => {
-        console.log(e);
-    };
-
     const renderRows = () => {
         if (brregRecords) {
             return brregRecords.map((record, index) => {
-                return (
-                    <Record
-                        key={index}
-                        data={record}
-                        onHover={(e) => displayExtraInfo(e.target)}
-                    />
-                );
+                return <Record key={index} data={record} />;
             });
         }
         return;

@@ -2,9 +2,11 @@ import types from './types';
 
 const initialState = {
     query: '',
+    visible: false,
     pending: false,
     results: [],
     fetchSuccess: false,
+    popUpPosition: [0, 0],
 };
 
 const reducer = (state = initialState, action) => {
@@ -34,6 +36,18 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 error: '',
+            };
+        case types.DISPLAY_DETAILED_INFO:
+            return {
+                ...state,
+                visible: true,
+                previewData: action.payload[0],
+                popUpPosition: action.payload[1],
+            };
+        case types.HIDE_DETAILED_INFO:
+            return {
+                ...state,
+                visible: false,
             };
         case types.FETCH_REGISTER_ERROR:
             return {

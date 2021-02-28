@@ -1,9 +1,9 @@
 # Søk mot Brønnøysundregisteret
-### Tipio Case
+# Tipio Case
 
 ## Create an app to communicate with API with Brønnøysundregisteret.
 
-## Need to have:
+## Project requirements:
 - search based on organisasjonsnummer
 - present the info in clear and nice way
 - search based on user input with companys name
@@ -12,14 +12,6 @@
 - display info on click
 - bankrupt companies are displayed with bold
 - link to website and email
-
-## Nice to have:
-- more functionality if you want
-
-## TODO
-- Prop Types
-  
-
 ## Project features:
 - upload and use external fonts via file-loader,
 - type checking with PropTypes,
@@ -29,5 +21,4 @@
 - Webpack and Babel configuration,
 - introduced global app theme, Global Styling,
 
-## Not yet done
-- independent, modular API communication,
+<img src="./src/assets/preview.png" alt="localStorage"/>

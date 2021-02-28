@@ -40,6 +40,21 @@ export const clearErrors = () => {
     };
 };
 
+export const displayDetailedInfo = (e, data) => {
+    const mousePosition = [e.clientX + 'px', e.clientY + 'px'];
+    return {
+        type: types.DISPLAY_DETAILED_INFO,
+        payload: [data, mousePosition],
+    };
+};
+
+export const hideDetailedInfo = () => {
+    return {
+        type: types.HIDE_DETAILED_INFO,
+        visible: false,
+    };
+};
+
 export const getDataFromRegister = () => (dispatch, getState) => {
     const api = new BrregAPI();
     const state = getState();

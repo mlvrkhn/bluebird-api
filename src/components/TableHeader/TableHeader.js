@@ -4,11 +4,13 @@ import StyledTableHeader from './TableHeader.styled';
 
 const TableHeader = () => {
     return (
-        <StyledTableHeader>
-            {tableFields.map((field) => {
-                return <div key={field}>{field}</div>;
-            })}
-        </StyledTableHeader>
+        <>
+            <StyledTableHeader>
+                {tableFields.map((field) => {
+                    return <div key={field}>{field}</div>;
+                })}
+            </StyledTableHeader>
+        </>
     );
 };
 
