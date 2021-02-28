@@ -8,6 +8,13 @@ export const setQuery = (query) => {
     };
 };
 
+export const saveResultsToStore = (results) => {
+    return {
+        type: types.SAVE_RESULTS_TO_STORE,
+        payload: results,
+    };
+};
+
 export const fetchRegisterPending = () => {
     return {
         type: types.FETCH_REGISTER_PENDING,
@@ -18,13 +25,6 @@ export const fetchRegisterError = (error) => {
     return {
         type: types.FETCH_REGISTER_ERROR,
         payload: error,
-    };
-};
-
-export const saveResultsToStore = (results) => {
-    return {
-        type: types.SAVE_RESULTS_TO_STORE,
-        payload: results,
     };
 };
 
