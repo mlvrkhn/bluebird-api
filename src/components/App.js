@@ -4,7 +4,7 @@ import GlobalStyle from '../styled/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 import theme from '../styled/theme';
 import SearchPanel from './SearchPanel';
-import { getDataFromRegister } from '../actions/actions';
+import { getDataFromRegister } from '../modules/brreg/actions';
 
 const App = () => {
     const dispatch = useDispatch();

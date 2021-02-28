@@ -1,5 +1,5 @@
-import types from '../types/types';
-import BrregAPI from '../api/api';
+import types from './types';
+import BrregAPI from './api';
 
 export const setQuery = (query) => {
     return {
