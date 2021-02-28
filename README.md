@@ -25,6 +25,8 @@
 - used Hooks: useState, useEffect, useDispatch, useSelector,
 - introduced global app theme, Global Styling,
 - appearance created with Styled-Components
+### App preview
+<img src="./src/assets/preview.png" alt="localStorage"/>  
 
-<img src="./src/assets/preview.png" alt="localStorage"/>
+### Redux Store Structure
 <img src="./src/assets/tipio-state.png" alt="localStorage"/>
