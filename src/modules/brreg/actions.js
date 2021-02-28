@@ -34,11 +34,18 @@ export const fetchRegisterSuccess = () => {
     };
 };
 
+export const clearErrors = () => {
+    return {
+        type: types.CLEAR_ERRORS,
+    };
+};
+
 export const getDataFromRegister = () => (dispatch, getState) => {
     const api = new BrregAPI();
     const state = getState();
 
     dispatch(fetchRegisterPending());
+    dispatch(clearErrors());
 
     api.getRegister(state.query)
         .then((resp) => {
@@ -49,7 +56,6 @@ export const getDataFromRegister = () => (dispatch, getState) => {
             dispatch(fetchRegisterSuccess());
         })
         .catch((err) => {
-            console.log('🚀 ~ getDataFromRegister ~ err', err);
             dispatch(fetchRegisterError(err));
         });
 };

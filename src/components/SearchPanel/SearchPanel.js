@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import StyledSearchPanel from './SearchPanel.styled';
-import { getDataFromRegister } from '../../modules/brreg/actions';
+import { getDataFromRegister, clearErrors } from '../../modules/brreg/actions';
 import Header from '../Header';
 import Results from '../Results';
 

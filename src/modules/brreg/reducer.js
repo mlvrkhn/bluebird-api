@@ -30,6 +30,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 fetchSuccess: true,
             };
+        case types.CLEAR_ERRORS:
+            return {
+                ...state,
+                error: '',
+            };
         case types.FETCH_REGISTER_ERROR:
             return {
                 ...state,
