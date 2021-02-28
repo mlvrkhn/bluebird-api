@@ -13,6 +13,7 @@
 - click on companys website takes you there,
 - autocompose email to company on Click.
 ### Project problems:
+- build with React.js and Redux,
 - Webpack and Babel configuration,
 - upload and use external fonts via file-loader,
 - type checking with PropTypes,
@@ -26,3 +27,4 @@
 - appearance created with Styled-Components
 
 <img src="./src/assets/preview.png" alt="localStorage"/>
+<img src="./src/assets/tipio-state.png" alt="localStorage"/>
