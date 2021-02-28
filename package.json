@@ -1,4 +1,5 @@
 {
+    "homepage": "http://mlvrkhn.github.io/bluebird-api",
     "name": "api-tipio",
     "version": "0.1.0",
     "private": true,
@@ -15,7 +16,9 @@
     },
     "scripts": {
         "start": "webpack serve --mode development --open",
-        "build": "webpack --mode production"
+        "build": "webpack --mode production",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
@@ -42,6 +45,7 @@
         "@babel/preset-react": "^7.12.13",
         "babel-loader": "^8.2.2",
         "file-loader": "^6.2.0",
+        "gh-pages": "^3.1.0",
         "html-webpack-plugin": "^5.2.0",
         "redux-thunk": "^2.3.0",
         "webpack": "^5.24.2",
