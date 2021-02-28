@@ -1,4 +1,6 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
+
 import StyledCell from './Cell.styled';
 import StyledRecord from './Record.styled';
 
@@ -21,6 +23,11 @@ const Record = ({ data, onHover }) => {
             </StyledCell>
         </StyledRecord>
     );
+};
+
+Record.propTypes = {
+    data: PropTypes.object.isRequired,
+    onHover: PropTypes.func.isRequired,
 };
 
 export default Record;

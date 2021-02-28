@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import StyledInput from './Input.styled';
+import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import { setQuery } from '../../modules/brreg/actions';
@@ -21,6 +22,10 @@ const Input = () => {
             placeholder='Søk Brønnøysundregisteret...'
         />
     );
+};
+
+Input.propTypes = {
+    userInput: PropTypes.string,
 };
 
 export default Input;

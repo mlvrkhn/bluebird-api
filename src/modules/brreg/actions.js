@@ -45,7 +45,6 @@ export const getDataFromRegister = () => (dispatch, getState) => {
     const state = getState();
 
     dispatch(fetchRegisterPending());
-    dispatch(clearErrors());
 
     api.getRegister(state.query)
         .then((resp) => {

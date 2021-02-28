@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import StyledHeader from './Header.styled';
 import Input from '../Input';
 import Logo from '../Logo';
@@ -8,9 +9,7 @@ import logo from '../../assets/logo.png';
 import bird from '../../assets/bird.gif';
 
 const Header = () => {
-    const dispatch = useDispatch();
     const error = useSelector((state) => state.error);
-
     return (
         <>
             <p>
@@ -25,6 +24,10 @@ const Header = () => {
             </StyledHeader>
         </>
     );
+};
+
+Header.propTypes = {
+    error: PropTypes.string,
 };
 
 export default Header;

@@ -6,7 +6,7 @@ const TableHeader = () => {
     return (
         <StyledTableHeader>
             {tableFields.map((field) => {
-                return <div>{field}</div>;
+                return <div key={field}>{field}</div>;
             })}
         </StyledTableHeader>
     );

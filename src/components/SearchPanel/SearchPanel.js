@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { PropTypes } from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import StyledSearchPanel from './SearchPanel.styled';
 import { getDataFromRegister, clearErrors } from '../../modules/brreg/actions';
@@ -12,6 +13,7 @@ const SearchPanel = () => {
     useEffect(() => {
         if (query.length > 2) {
             dispatch(getDataFromRegister());
+            dispatch(clearErrors());
         }
     }, [query]);
 
@@ -21,6 +23,10 @@ const SearchPanel = () => {
             <Results />
         </StyledSearchPanel>
     );
+};
+
+SearchPanel.propTypes = {
+    query: PropTypes.string,
 };
 
 export default SearchPanel;
