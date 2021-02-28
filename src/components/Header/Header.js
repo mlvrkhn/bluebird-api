@@ -10,8 +10,8 @@ const Header = () => {
     return (
         <StyledHeader>
             <Input />
-            <Logo src={logo} alt='tipio-logo' />
-            <Logo src={bird} alt='tipio-bird' />
+            <Logo src={logo} height='35px' alt='tipio-logo' />
+            <Logo src={bird} height='70px' alt='tipio-bird' />
         </StyledHeader>
     );
 };
