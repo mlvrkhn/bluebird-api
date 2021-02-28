@@ -13,15 +13,13 @@ const Input = () => {
     }, [userInput]);
 
     return (
-        <>
-            <StyledInput
-                onChange={(e) => {
-                    setUserInput(e.target.value);
-                }}
-                value={userInput}
-                placeholder='Søk Brønnøysundregisteret...'
-            />
-        </>
+        <StyledInput
+            onChange={(e) => {
+                setUserInput(e.target.value);
+            }}
+            value={userInput}
+            placeholder='Søk Brønnøysundregisteret...'
+        />
     );
 };
 

@@ -11,7 +11,7 @@ const Record = ({ data, onHover }) => {
             <StyledCell>{navn}</StyledCell>
             <StyledCell>
                 {hjemmeside ? (
-                    <a href={`www.${hjemmeside}`}>{hjemmeside}</a>
+                    <a href={`https://${hjemmeside}`}>{hjemmeside}</a>
                 ) : (
                     ''
                 )}
