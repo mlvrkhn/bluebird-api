@@ -14,7 +14,7 @@ const Record = ({ data, onHover }) => {
 
     return (
         <StyledRecord
-            onMouseEnter={(e) => dispatch(displayDetailedInfo(e, data))}
+            onMouseEnter={(event) => dispatch(displayDetailedInfo(event, data))}
             onMouseLeave={() => dispatch(hideDetailedInfo())}
             bold={konkurs}
         >

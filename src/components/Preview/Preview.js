@@ -4,22 +4,20 @@ import { useSelector } from 'react-redux';
 import StyledPreview from './Preview.styled';
 
 const Preview = () => {
-    const { visible, popUpPosition, previewData } = useSelector(
+    const { visible, coursorOffsetY, previewData } = useSelector(
         (state) => state
     );
 
     const { organisasjonsnummer, konkurs, antallAnsatte, navn } = previewData;
 
     return (
-        <StyledPreview visible={visible} position={popUpPosition}>
-            <h1>Preview</h1>
+        <StyledPreview visible={visible} position={coursorOffsetY}>
             <ul>
                 <li>
-                    Organisasjonsnummer:{' '}
-                    {organisasjonsnummer ? organisasjonsnummer : ''}
+                    Org. nr: {organisasjonsnummer ? organisasjonsnummer : ''}
                 </li>
-                <li>Konkurs: {konkurs ? konkurs : ''}</li>
-                <li>AntallAnsatte: {antallAnsatte ? antallAnsatte : ''}</li>
+                <li>Konkurs: {konkurs ? 'Ja' : 'Nei'}</li>
+                <li>AntallAnsatte: {antallAnsatte ? antallAnsatte : '0'}</li>
                 <li>Navn: {navn ? navn : ''}</li>
             </ul>
         </StyledPreview>

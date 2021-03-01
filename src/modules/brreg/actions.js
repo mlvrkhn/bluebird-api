@@ -41,10 +41,10 @@ export const clearErrors = () => {
 };
 
 export const displayDetailedInfo = (e, data) => {
-    const mousePosition = [e.clientX + 'px', e.clientY + 'px'];
+    const coursorPosition = `${e.clientY}px`;
     return {
         type: types.DISPLAY_DETAILED_INFO,
-        payload: [data, mousePosition],
+        payload: [data, coursorPosition],
     };
 };
 

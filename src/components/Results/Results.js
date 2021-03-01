@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import StyledResults from './Results.styled';
 import Record from '../Record';
+import Preview from '../Preview';
 import TableHeader from '../TableHeader';
 import { useSelector } from 'react-redux';
 
@@ -20,6 +21,7 @@ const Results = () => {
         <StyledResults>
             <TableHeader />
             {renderRows()}
+            <Preview />
         </StyledResults>
     );
 };

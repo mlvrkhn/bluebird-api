@@ -5,7 +5,6 @@ import StyledSearchPanel from './SearchPanel.styled';
 import { getDataFromRegister, clearErrors } from '../../modules/brreg/actions';
 import Header from '../Header';
 import Results from '../Results';
-import Preview from '../Preview';
 
 const SearchPanel = () => {
     const dispatch = useDispatch();

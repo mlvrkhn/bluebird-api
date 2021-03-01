@@ -6,7 +6,13 @@ const initialState = {
     pending: false,
     results: [],
     fetchSuccess: false,
-    popUpPosition: [0, 0],
+    coursorOffsetY: '0',
+    previewData: {
+        organisasjonsnummer: '',
+        konkurs: '',
+        antallAnsatte: '',
+        navn: '',
+    },
 };
 
 const reducer = (state = initialState, action) => {
@@ -42,7 +48,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 visible: true,
                 previewData: action.payload[0],
-                popUpPosition: action.payload[1],
+                coursorOffsetY: action.payload[1],
             };
         case types.HIDE_DETAILED_INFO:
             return {
