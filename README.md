@@ -2,6 +2,18 @@
 # Tipio Case
 
 ## Create an app to communicate with API with Brønnøysundregisteret.
+
+### Installation
+Download packages.
+```
+npm i
+```
+
+Start app  
+```
+npm start
+```
+
 ### Project features:
 - search Brønnøysundregisteret based on organisasjonsnummer,
 - search Brønnøysundregisteret based on user input with companys name,

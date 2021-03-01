@@ -6,7 +6,7 @@ const StyledPreview = styled.div`
     min-height: 300px;
     position: absolute;
     top: ${({ position }) => position};
-    right: -150px;
+    right: -100px;
     border-radius: ${({ theme }) => theme.borderRadius.small};
     z-index: 100;
     padding: 10px;
