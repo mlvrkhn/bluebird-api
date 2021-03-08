@@ -1,9 +1,9 @@
 # Søk mot Brønnøysundregisteret
-# Tipio Case
 
-## Create an app to communicate with API with Brønnøysundregisteret.
+[Try live version](https://mlvrkhn.github.io/bluebird-api/)
 
 ### Installation
+
 Download packages.
 ```
 npm i
@@ -16,7 +16,7 @@ npm start
 
 ### Project features:
 - search Brønnøysundregisteret based on organisasjonsnummer,
-- search Brønnøysundregisteret based on user input with companys name,
+- also search based on user input with companys name,
 - starts searching when third letter is provided,
 - present the info in clear and nice way,
 - results should be continuously presented under the search field,

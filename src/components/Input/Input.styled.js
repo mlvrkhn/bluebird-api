@@ -4,6 +4,7 @@ const StyledInput = styled.input`
     width: 400px;
     height: 60px;
     border: none;
+    margin: 0 20px;
     outline: none;
     color: ${({ theme }) => theme.color.white};
     background-color: ${({ theme }) => theme.color.blue};

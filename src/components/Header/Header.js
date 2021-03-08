@@ -5,7 +5,7 @@ import StyledHeader from './Header.styled';
 import Input from '../Input';
 import Logo from '../Logo';
 
-import logo from '../../assets/logo.png';
+import logo from '../../assets/brregLogoHvit.svg';
 import bird from '../../assets/bird.gif';
 
 const Header = () => {
@@ -20,7 +20,7 @@ const Header = () => {
             <StyledHeader>
                 <Input />
                 <Logo src={logo} height='35px' alt='tipio-logo' />
-                <Logo src={bird} height='70px' alt='tipio-bird' />
+                {/* <Logo src={bird} height='70px' alt='tipio-bird' /> */}
             </StyledHeader>
         </>
     );
